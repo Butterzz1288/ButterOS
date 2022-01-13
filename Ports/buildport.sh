@@ -1,3 +1,4 @@
+#!/bin/sh
 if [ -z "$JOBCOUNT" ]; then
     export JOBCOUNT=$(nproc)
 fi

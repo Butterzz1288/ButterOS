@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
  	git clone https://github.com/LemonOSProject/llvm-project.git --depth 1 llvm-project
  	export BUILD_DIR=llvm-project

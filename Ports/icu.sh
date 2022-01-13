@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/icu4c-69_1-src.tgz ]; then # Check if tarball exists
  		curl -Lo cache/icu4c-69_1-src.tgz "https://github.com/unicode-org/icu/releases/download/release-69-1/icu4c-69_1-src.tgz"

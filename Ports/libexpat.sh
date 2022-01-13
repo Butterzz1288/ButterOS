@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
  	git clone --branch R_2_4_1 https://github.com/libexpat/libexpat.git libexpat --depth 1
  	export BUILD_DIR=libexpat

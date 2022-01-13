@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/libressl-3.3.1.tar.gz ]; then # Check if tarball exists
         curl -Lo cache/libressl-3.3.1.tar.gz "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.1.tar.gz"

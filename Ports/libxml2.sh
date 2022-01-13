@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/libxml2-v2.9.11.tar.gz ]; then # Check if tarball exists
         curl -Lo cache/libxml2-v2.9.11.tar.gz "https://gitlab.gnome.org/GNOME/libxml2/-/archive/v2.9.11/libxml2-v2.9.11.tar.gz"

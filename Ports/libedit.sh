@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/libedit-20191231-3.1.tar.gz ]; then # Check if tarball exists
         curl -Lo cache/libedit-20191231-3.1.tar.gz "https://thrysoee.dk/editline/libedit-20191231-3.1.tar.gz"

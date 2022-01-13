@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
  	git clone https://github.com/LemonOSProject/lemon-gnuboy.git --depth 1 lemon-gnuboy
  	export BUILD_DIR=lemon-gnuboy

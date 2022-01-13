@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/libpng-1.6.37.tar.gz ]; then # Check if tarball exists
         curl -Lo cache/libpng-1.6.37.tar.gz "https://download.sourceforge.net/libpng/libpng-1.6.37.tar.gz"
