@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/cairo-1.16.0.tar.xz ]; then # Check if tarball exists
         curl -Lo cache/cairo-1.16.0.tar.xz "https://www.cairographics.org/releases/cairo-1.16.0.tar.xz"
@@ -13,5 +14,5 @@ buildp(){
     ./configure --host=x86_64-lemon --prefix=/system --disable-xlib --disable-xcb --without-x --disable-gobject --enable-svg=no --enable-pdf=no --disable-gtk-doc-html
 
  	make -j$JOBCOUNT
- 	make install DESTDIR=$LEMON_SYSROOT
+ 	make install DESTDIR="$LEMON_SYSROOT"
 }
