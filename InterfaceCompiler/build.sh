@@ -1,4 +1,5 @@
-if [ -z $CXX ]; then
+#!/bin/sh
+if [ -z "$CXX" ]; then
 	CXX=g++
 fi
 
