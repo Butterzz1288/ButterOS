@@ -7,6 +7,6 @@ buildp(){
  	cd $BUILD_DIR
 
 	./configure --host=x86_64-lemon
- 	make -j$JOBCOUNT
+ 	make -j"$JOBCOUNT"
  	cp lemongnuboy "$LEMON_SYSROOT/$LEMON_PREFIX/bin/gnuboy.lef"
 }
