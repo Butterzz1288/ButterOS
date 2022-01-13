@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/zlib-1.2.11.tar.gz ]; then # Check if tarball exists
         curl -Lo cache/zlib-1.2.11.tar.gz "https://zlib.net/zlib-1.2.11.tar.gz"

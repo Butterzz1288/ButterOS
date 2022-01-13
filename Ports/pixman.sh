@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/pixman-0.40.0.tar.gz ]; then # Check if tarball exists
         curl -Lo cache/pixman-0.40.0.tar.gz "https://www.cairographics.org/releases/pixman-0.40.0.tar.gz"

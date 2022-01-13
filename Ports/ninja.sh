@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
  	git clone https://github.com/LemonOSProject/ninja.git --depth 1 ninja
  	export BUILD_DIR=ninja

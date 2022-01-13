@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/mesa-20.3.4.tar.gz ]; then # Check if tarball exists
         curl -Lo cache/mesa-20.3.4.tar.gz "https://github.com/mesa3d/mesa/archive/mesa-20.3.4.tar.gz"
