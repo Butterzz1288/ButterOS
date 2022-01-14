@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.14
 
 RUN apk add --no-cache nasm python3 ninja make cmake automake autoconf libtool make gcc g++ musl-dev git curl patch
 
