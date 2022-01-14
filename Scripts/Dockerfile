@@ -1,5 +1,5 @@
 FROM alpine:3.14
-
+RUN pip install django==1.9
 RUN apk add --no-cache nasm python3 ninja make cmake automake autoconf libtool make gcc g++ musl-dev git curl patch
 
 RUN cd /root && curl https://raw.githubusercontent.com/fido2020/Lemon-OS/master/Toolchain/buildtoolchain.sh -o buildtoolchain.sh && curl https://raw.githubusercontent.com/fido2020/Lemon-OS/master/Toolchain/lemon-binutils-2.32.patch -o lemon-binutils-2.32.patch && chmod 755 /root/buildtoolchain.sh
