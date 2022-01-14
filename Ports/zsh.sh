@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/zsh-5.8.tar.xz ]; then # Check if tarball exists
  		curl -Lo cache/zsh-5.8.tar.xz "https://www.zsh.org/pub/zsh-5.8.tar.xz"

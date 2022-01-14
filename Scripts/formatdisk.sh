@@ -1,3 +1,4 @@
+#!/bin/sh
 LOOPBACK_DEVICE=$(losetup --find --partscan --show Disks/Lemon.img) # Find an empty loopback device and mount
 echo "Mounted image as loopback device at ${LOOPBACK_DEVICE}"
 

@@ -1,3 +1,4 @@
+#!/bin/sh
 unpack(){
     if ! [ -f cache/Python-3.8.2.tgz ]; then # Check if tarball exists
         curl -Lo cache/Python-3.8.2.tgz "https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz"
