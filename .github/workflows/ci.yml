@@ -141,7 +141,7 @@ jobs:
           Ports/buildport.sh python
           Ports/buildport.sh curl
           Ports/buildport.sh busybox
-
+          Ports/buildport.sh BGet-ImgView
       - name: Building disk image
         run: ninja -C Build disk
       
