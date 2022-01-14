@@ -1,5 +1,5 @@
 ![banner](Documentation/AdCampaignImage.png)
-
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/852e0c4ad6bd4befa6832e7dd32f05c1)](https://www.codacy.com/gh/Butterzz1288/ButterOS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Butterzz1288/ButterOS&amp;utm_campaign=Badge_Grade)
 Vote for a feature [here](https://docs.google.com/forms/d/e/1FAIpQLSesUoCekN2PGFcqOll6-0yWx8PKkZi1XENgwR8okMS8BnaJNw/viewform?usp=sf_link) 
 
 # Butter OS is a fork of LemonOS
