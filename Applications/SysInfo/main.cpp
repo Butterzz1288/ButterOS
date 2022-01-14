@@ -28,10 +28,10 @@ int main(int argc, char** argv){
 
     window = new Lemon::GUI::Window(" Your Computer's Information", {winWidth, 300}, WINDOW_FLAGS_RESIZABLE, Lemon::GUI::WindowType::GUI);
     window->AddWidget(bannerW);
-
+	
     int ypos = banner.height + 4;
     sysInfo = Lemon::SysInfo();
-
+	
     char buf[64];
 
 	syscall(SYS_UNAME, versionString,0,0,0,0);
@@ -48,7 +48,7 @@ int main(int argc, char** argv){
     usedMem = new Lemon::GUI::Label(buf, {{4, ypos}, {200, 12}});
     window->AddWidget(usedMem);
     ypos += 16;
-
+	Lemon::GUI::DisplayMessageBox("Tips", "You can download utilities off the BGet Repo!", Lemon::GUI::MsgButtonsOK);
 	while(!window->closed){
 		Lemon::WindowServer::Instance()->Poll();
         
@@ -63,5 +63,6 @@ int main(int argc, char** argv){
         } sysInfo = _sysInfo;
 
         Lemon::WindowServer::Instance()->Wait();
+		
 	}
 }
