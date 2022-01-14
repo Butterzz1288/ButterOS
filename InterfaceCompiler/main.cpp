@@ -193,9 +193,9 @@ void Parse(){
             default:
                 printf("error: [line %d:%d] Unexpected code '%s'!", tok.lineNum, tok.linePos, CodeNames[tok.type].c_str());
                 exit(3);
-                continue;
+                
             } 
-            break;
+            
         case ParserStateInterface:
             switch(tok.type){
             case CodeIdentifier: {
