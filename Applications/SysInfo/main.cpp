@@ -36,7 +36,7 @@ int main(int argc, char** argv){
 
 	syscall(SYS_UNAME, versionString,0,0,0,0);
 
-    window->AddWidget(new Lemon::GUI::Label("Version: "versionString, {{4, ypos}, {200, 12}}));
+    window->AddWidget(new Lemon::GUI::Label("Version: ButterOS 3.0", {{4, ypos}, {200, 12}}));
     ypos += 24;
 
     snprintf(buf, 64, "Total System disk space: %lu MB (%lu KB )", sysInfo.totalMem / 1024, sysInfo.totalMem);
