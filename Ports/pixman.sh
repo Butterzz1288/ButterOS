@@ -13,6 +13,6 @@ buildp(){
  	patch -p1 < ../lemon-pixman-0.40.0.patch
     ./configure --host=x86_64-lemon --prefix=/system
 
- 	make -j$JOBCOUNT
- 	make install DESTDIR=$LEMON_SYSROOT
+ 	make -j"$JOBCOUNT"
+ 	make install DESTDIR="$LEMON_SYSROOT"
 }

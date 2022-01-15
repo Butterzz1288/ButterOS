@@ -24,6 +24,6 @@ buildp(){
     _PYTHON_HOST_PLATFORM=x86_64-lemon PYTHON_FOR_BUILD=./hostpython ac_cv_file__dev_ptmx=yes ac_cv_file__dev_ptc=no \
 	./configure --host=x86_64-lemon --disable-ipv6 --build=x86_64 --prefix=/system --without-ensurepip --with-sysroot=$LEMON_SYSROOT --disable-shared
     
- 	_PYTHON_HOST_PLATFORM=x86_64-lemon make -j$JOBCOUNT HOSTPYTHON=./hostpython HOSTPGEN=./Parser/hostpgen
- 	_PYTHON_HOST_PLATFORM=x86_64-lemon make -j$JOBCOUNT install DESTDIR=$LEMON_SYSROOT
+ 	_PYTHON_HOST_PLATFORM=x86_64-lemon make -j"$JOBCOUNT" HOSTPYTHON=./hostpython HOSTPGEN=./Parser/hostpgen
+ 	_PYTHON_HOST_PLATFORM=x86_64-lemon make -j"$JOBCOUNT" install DESTDIR="$LEMON_SYSROOT"
 }
