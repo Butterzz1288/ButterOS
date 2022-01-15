@@ -1,7 +1,7 @@
 #!/bin/sh
 export TOOLCHAIN_PATH="$HOME/.local/share/lemon/bin"
 SPATH=$(dirname $(readlink -f "$0"))
-source $SPATH/env.sh
+source "$SPATH"/env.sh
 
 if ! [ -x "$(command -v lemon-clang)" ]; then
     echo "Lemon cross toolchain not found (Did you forget to build toolchain?)"
@@ -10,12 +10,12 @@ fi
 
 set -e 1
 
-mkdir -p $HOME/.local/share/lemon/sysroot/system/lib
-mkdir -p $HOME/.local/share/lemon/sysroot/system/include
-mkdir -p $HOME/.local/share/lemon/sysroot/system/bin
+mkdir -p "$HOME"/.local/share/lemon/sysroot/system/lib
+mkdir -p "$HOME"/.local/share/lemon/sysroot/system/include
+mkdir -p "$HOME"/.local/share/lemon/sysroot/system/bin
 
-ln -sfT ../../../include/c++ $HOME/.local/share/lemon/sysroot/system/include/c++
-cp $HOME/.local/share/lemon/lib/x86_64-unknown-lemon/*.so* $HOME/.local/share/lemon/sysroot/system/lib
+ln -sfT ../../../include/c++ "$HOME"/.local/share/lemon/sysroot/system/include/c++
+cp $HOME/.local/share/lemon/lib/x86_64-unknown-lemon/*.so* "$HOME"/.local/share/lemon/sysroot/system/lib
 
 cd $SPATH/..
 
@@ -49,4 +49,4 @@ cd "$LEMON_BUILDROOT/Ports"
 cd $SPATH/..
 
 meson Build --cross $SPATH/lemon-crossfile.txt
-$SPATH/buildinterfaces.sh
+"$SPATH"/buildinterfaces.sh
