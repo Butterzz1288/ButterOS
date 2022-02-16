@@ -15,7 +15,7 @@ __thread int dflags = 0;
 void FileDialogOnFileOpened(const char* path, __attribute__((unused)) FileView* fv) {
     if (!(dflags & FILE_DIALOG_CREATE) || access(path, W_Ok) ||
         DisplayMessageBox(
-            "Open File...", "File already exists! Replace?",
+            "File MGR", "File already exists! Replace?",
             MsgButtonsOkCancel)) { // Only open if create flag not specified OR user responds Ok to message
         if (selectedPth) {
             free(selectedPth);
@@ -35,7 +35,7 @@ void FileDialogOnCancelPress(Lemon::GUI::Button* btn) {
 
 void FileDialogOnFileBoxSubmit(Lemon::GUI::TextBox* box) {
     if (box->contents.front().find('/') != std::string::npos && box->contents.size() > NAME_MAX) {
-        DisplayMessageBox("Open...", "Filename is invalid!", MsgButtonsOk);
+        DisplayMessageBox("File MGR- Error", "Filename is invalid!", MsgButtonsOk);
         return;
     }
 
@@ -51,13 +51,13 @@ void FileDialogOnFileBoxSubmit(Lemon::GUI::TextBox* box) {
     } else if (e && errno == ENOENT) {
         char buf[512];
         sprintf(buf, "File %s not found!", path.c_str());
-        DisplayMessageBox("Open...", buf, MsgButtonsOk);
+        DisplayMessageBox("FileMGR- error", buf, MsgButtonsOk);
         return;
     } else if (e) {
         perror("GUI: FileDialog: ");
         char buf[512];
         sprintf(buf, "Error opening file %s (Error code: %d)", path.c_str(), errno);
-        DisplayMessageBox("Open...", buf, MsgButtonsOk);
+        DisplayMessageBox("File MGR- error", buf, MsgButtonsOk);
         return;
     } else if ((sResult.st_mode & S_IFMT) == S_IFDIR && !(dflags & FILE_DIALOG_DIRECTORIES)) {
         dialogFileView->OnSubmit(path);
@@ -80,7 +80,7 @@ char* FileDialog(const char* path, int flags) {
     dialogFileView = nullptr;
     dialogFileBox = nullptr;
 
-    Window* win = new Window("Open File 2.0", {504, 300}, WINDOW_FLAGS_RESIZABLE, WindowType::GUI);
+    Window* win = new Window("File MGR", {504, 325}, WINDOW_FLAGS_RESIZABLE, WindowType::GUI);
 
     FileView* fv = new FileView({0, 0, 0, 62}, path, FileDialogOnFileOpened);
     win->AddWidget(fv);
