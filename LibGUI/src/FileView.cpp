@@ -114,7 +114,7 @@ FileView::FileView(rect_t bounds, const char* path, void (*_OnFileOpened)(const 
         }
 
         if (strncmp(ent->d_name, "hd", 2) == 0 && ent->d_name[2]) { // hd(x)?
-            snprintf(str, NAME_MAX, "Harddrive (%s)", ent->d_name);
+            snprintf(str, NAME_MAX, "Disk (%s)", ent->d_name);
             icon = 1;
         } else if (strcmp(ent->d_name, "system") == 0) {
             strcpy(str, "System");
@@ -234,7 +234,7 @@ void FileView::OnSubmit(std::string& path) {
         perror("GUI: FileView: OnSubmit: Stat:");
         char msg[512];
         sprintf(msg, "Error opening file %s (Error Code: %d)", absPath.c_str(), ret);
-        DisplayMessageBox("Open...", msg, MsgButtonsOK);
+        DisplayMessageBox("File MGR", msg, MsgButtonsOK);
         return;
     }
 
