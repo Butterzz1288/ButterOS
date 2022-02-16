@@ -1,7 +1,7 @@
 #!/bin/sh
 SPATH=$(dirname $(readlink -f "$0"))
 
-cd $SPATH/..
+cd "$SPATH"/..
 export LEMONDIR="$(pwd)"
 cd $SPATH
 
@@ -40,12 +40,12 @@ _unpack_limine(){
 _build_binutils(){
     cd $BINUTILS_SRC_DIR
 
-    ./configure --target=x86_64-lemon --prefix=$TOOLCHAIN_PREFIX --with-sysroot=$LEMON_SYSROOT --disable-werror --enable-shared
+    ./configure --target=x86_64-lemon --prefix="$TOOLCHAIN_PREFIX" --with-sysroot="$LEMON_SYSROOT" --disable-werror --enable-shared
     
     make -j $JOBCOUNT
     make install
 
-    ln -sf x86_64-lemon-ld $TOOLCHAIN_PREFIX/bin/x86_64-unknown-lemon-ld
+    ln -sf x86_64-lemon-ld "$TOOLCHAIN_PREFIX"/bin/x86_64-unknown-lemon-ld
 }
 
 _build_llvm(){
@@ -71,18 +71,18 @@ _build_limine(){
     cd $LIMINE_SRC_DIR
 
     make
-    make install PREFIX=$TOOLCHAIN_PREFIX
+    make install PREFIX="$TOOLCHAIN_PREFIX"
 }
 
 _prepare(){
 	mkdir -p $LEMON_SYSROOT/system
-	mkdir -p $LEMON_SYSROOT/system/include
-	mkdir -p $LEMON_SYSROOT/system/lib
-	mkdir -p $LEMON_SYSROOT/system/bin
+	mkdir -p "$LEMON_SYSROOT"/system/include
+	mkdir -p "$LEMON_SYSROOT"/system/lib
+	mkdir -p "$LEMON_SYSROOT"/system/bin
 	
     CWD="$(pwd)"
 
-    cd $LEMONDIR/InterfaceCompiler
+    cd "$LEMONDIR"/InterfaceCompiler
     ./build.sh # Build the interface compiler
 
     cd $LEMON_SYSROOT/..
